@@ -6,7 +6,7 @@ namespace Soenneker.Enums.Email.Priority;
 /// An enumerator for email priorities
 /// </summary>
 [Intellenum<string>]
-public partial class EmailPriority
+public sealed partial class EmailPriority
 {
     public static readonly EmailPriority Low = new(nameof(Low));
 
