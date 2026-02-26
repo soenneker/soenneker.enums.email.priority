@@ -1,11 +1,11 @@
-﻿using Intellenum;
+using Soenneker.Gen.EnumValues;
 
 namespace Soenneker.Enums.Email.Priority;
 
 /// <summary>
 /// An enumerator for email priorities
 /// </summary>
-[Intellenum<string>]
+[EnumValue<string>]
 public sealed partial class EmailPriority
 {
     public static readonly EmailPriority Low = new(nameof(Low));
