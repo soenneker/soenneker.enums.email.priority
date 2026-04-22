@@ -1,16 +1,15 @@
-﻿using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Enums.Email.Priority.Tests;
 
-[Collection("Collection")]
-public class EmailPriorityTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public class EmailPriorityTests : HostedUnitTest
 {
-    public EmailPriorityTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public EmailPriorityTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
