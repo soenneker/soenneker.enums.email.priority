@@ -8,9 +8,18 @@ namespace Soenneker.Enums.Email.Priority;
 [EnumValue<string>]
 public sealed partial class EmailPriority
 {
+    /// <summary>
+    /// The low.
+    /// </summary>
     public static readonly EmailPriority Low = new(nameof(Low));
 
+    /// <summary>
+    /// The normal.
+    /// </summary>
     public static readonly EmailPriority Normal = new(nameof(Normal));
 
+    /// <summary>
+    /// The high.
+    /// </summary>
     public static readonly EmailPriority High = new(nameof(High));
 }
