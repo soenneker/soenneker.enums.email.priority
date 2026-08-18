@@ -3,23 +3,23 @@ using Soenneker.Gen.EnumValues;
 namespace Soenneker.Enums.Email.Priority;
 
 /// <summary>
-/// An enumerator for email priorities
+/// Identifies the delivery priority assigned to an email message.
 /// </summary>
 [EnumValue<string>]
 public sealed partial class EmailPriority
 {
     /// <summary>
-    /// The low.
+    /// Low-priority delivery.
     /// </summary>
     public static readonly EmailPriority Low = new(nameof(Low));
 
     /// <summary>
-    /// The normal.
+    /// Normal-priority delivery.
     /// </summary>
     public static readonly EmailPriority Normal = new(nameof(Normal));
 
     /// <summary>
-    /// The high.
+    /// High-priority delivery.
     /// </summary>
     public static readonly EmailPriority High = new(nameof(High));
 }
