@@ -5,7 +5,7 @@
 
 # Soenneker.Enums.Email.Priority
 
-Identifies the delivery priority assigned to an email message.
+A string-backed enum-value type for carrying an email priority through application and transport contracts.
 
 ## Install
 
@@ -13,6 +13,20 @@ Identifies the delivery priority assigned to an email message.
 dotnet add package Soenneker.Enums.Email.Priority
 ```
 
-## What you get
+## Usage
 
-- `EmailPriority` — Identifies the delivery priority assigned to an email message.
+```csharp
+using Soenneker.Enums.Email.Priority;
+
+EmailPriority priority = EmailPriority.High;
+string wireValue = priority.Value; // "High"
+
+if (EmailPriority.TryFromValue(input, out EmailPriority? parsed))
+{
+    // parsed is Low, Normal, or High
+}
+```
+
+Available values are `Low`, `Normal`, and `High`. `System.Text.Json` serializes the type as the matching string value and restores recognized values to the shared static instances. `FromValue` throws for unknown input; use `TryFromValue` for request values. `FromName` and `TryFromName` are also generated.
+
+The type is a priority label, not a delivery guarantee. A sender must map it to the transport's priority headers or provider fields, and receiving clients may ignore those hints. It does not change queue ordering, retry policy, or provider service level on its own.
